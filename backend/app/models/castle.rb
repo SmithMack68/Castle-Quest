@@ -1,0 +1,3 @@
+class Castle < ApplicationRecord
+    
+end
