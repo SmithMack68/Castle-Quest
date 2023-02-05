@@ -16,11 +16,18 @@ class UsersController < ApplicationController
   def create
     @user = User.new(user_params)
     if @user.save
-      render json: @user, status: :created, location: @user
+      session[:user_id] = @user.id
+      render json: @user, status: :created
     else
       render json: @user.errors, status: :unprocessable_entity
     end
   end
+
+  # def create 
+  #   @user = User.create!(user_params)
+  #   session[:user_id] = @user.id # login_user from appCont 
+  #   render json: @user, status: :create
+  # end
 
   # PATCH/PUT /users/1
   def update
