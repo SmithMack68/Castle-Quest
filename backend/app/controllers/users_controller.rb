@@ -12,10 +12,9 @@ class UsersController < ApplicationController
     render json: @user
   end
 
-  # POST /users
+  # signup - create account and login user
   def create
     @user = User.new(user_params)
-
     if @user.save
       render json: @user, status: :created, location: @user
     else
@@ -45,6 +44,6 @@ class UsersController < ApplicationController
 
     # Only allow a list of trusted parameters through.
     def user_params
-      params.require(:user).permit(:name, :email, :password_digest, :username)
+      params.require(:user).permit(:name, :email, :password, :username)
     end
 end

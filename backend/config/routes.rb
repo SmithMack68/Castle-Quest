@@ -2,9 +2,12 @@ Rails.application.routes.draw do
   resources :trips
   resources :castles
   resources :reviews
-  resources :users
-  # Define your application routes per the DSL in https://guides.rubyonrails.org/routing.html
+  resources :users, only: [:index, :show, :create]
 
-  # Defines the root path route ("/")
-  # root "articles#index"
+  # sessions and custom routes
+  post '/signup', to: 'users#create'
+
+  post '/login', to: 'sessions#create'
+  delete 'logout', to: 'sessions#destroy'
+
 end

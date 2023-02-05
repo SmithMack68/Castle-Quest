@@ -4,7 +4,6 @@ class CastlesController < ApplicationController
   # GET /castles
   def index
     @castles = Castle.all
-
     render json: @castles
   end
 
