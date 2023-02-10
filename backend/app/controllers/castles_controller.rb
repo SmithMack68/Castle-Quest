@@ -38,13 +38,12 @@ class CastlesController < ApplicationController
   end
 
   private
-    # Use callbacks to share common setup or constraints between actions.
     def set_castle
       @castle = Castle.find(params[:id])
     end
 
     # Only allow a list of trusted parameters through.
     def castle_params
-      params.require(:castle).permit(:name, :image, :location, :short_description, :hours_of_operation, :website, :user_id)
+      params.permit(:name, :image, :location, :short_description, :hours_of_operation, :website, reviews_attributes: [:username, :comment, :user_id])
     end
 end

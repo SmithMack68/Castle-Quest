@@ -4,7 +4,6 @@ class TripsController < ApplicationController
   # GET /trips
   def index
     @trips = Trip.all
-
     render json: @trips
   end
 
@@ -16,9 +15,8 @@ class TripsController < ApplicationController
   # POST /trips
   def create
     @trip = Trip.new(trip_params)
-
     if @trip.save
-      render json: @trip, status: :created, location: @trip
+      render json: @trip, status: :created
     else
       render json: @trip.errors, status: :unprocessable_entity
     end
@@ -26,11 +24,8 @@ class TripsController < ApplicationController
 
   # PATCH/PUT /trips/1
   def update
-    if @trip.update(trip_params)
-      render json: @trip
-    else
-      render json: @trip.errors, status: :unprocessable_entity
-    end
+    if @trip.update!(trip_params)
+      render json: @trip, status: :accepted
   end
 
   # DELETE /trips/1
@@ -39,13 +34,12 @@ class TripsController < ApplicationController
   end
 
   private
-    # Use callbacks to share common setup or constraints between actions.
     def set_trip
       @trip = Trip.find(params[:id])
     end
 
-    # Only allow a list of trusted parameters through.
+
     def trip_params
-      params.require(:trip).permit(:username, :route_travelled, :hours, :things_to_do, :places_to_eat, :user_id, :castle_id)
+      params.permit(:username, :route_travelled, :hours, :things_to_do, :places_to_eat, :user_id, :castle_id)
     end
 end

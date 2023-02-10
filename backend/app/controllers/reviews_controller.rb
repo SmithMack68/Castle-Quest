@@ -4,7 +4,6 @@ class ReviewsController < ApplicationController
   # GET /reviews
   def index
     @reviews = Review.all
-
     render json: @reviews
   end
 
@@ -46,6 +45,6 @@ class ReviewsController < ApplicationController
 
     # Only allow a list of trusted parameters through.
     def review_params
-      params.require(:review).permit(:username, :comment, :user_id, :castle_id)
+      params.permit(:username, :comment, :user_id, :castle_id)
     end
 end
