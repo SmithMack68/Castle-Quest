@@ -1,4 +1,5 @@
 class CastlesController < ApplicationController
+  skip_before_action :authenticate_user
   before_action :set_castle, only: %i[ show update destroy ]
 
   # GET /castles
@@ -42,8 +43,7 @@ class CastlesController < ApplicationController
       @castle = Castle.find(params[:id])
     end
 
-    # Only allow a list of trusted parameters through.
     def castle_params
-      params.permit(:name, :image, :location, :short_description, :hours_of_operation, :website, reviews_attributes: [:username, :comment, :user_id])
+      params.permit(:name, :image_url, :location, :short_description, :hours_of_operation, :website, reviews_attributes: [:username, :comment, :user_id])
     end
 end
