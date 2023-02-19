@@ -26,10 +26,10 @@ export default function Navbar() {
     <div className={classes.root}>
       <AppBar position="static">
         <Toolbar>
-          <Typography style={{ fontFamily: 'cursive'}} color='black' variant="h4" className={classes.title}>
+          <Typography style={{ fontFamily: 'cursive'}}  variant="h3" className={classes.title}>
             Castle Quest
           </Typography>
-          <Button style={{fontFamily: ""}} color="black">Castles</Button>
+          <Button style={{fontFamily: ""}} color="inherit">Castles</Button>
           <Button color="inherit">Trips</Button>
           <Button color="inherit">Logout</Button>
         </Toolbar>
