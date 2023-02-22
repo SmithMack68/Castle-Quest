@@ -7,7 +7,8 @@ export const fetchCastles = createAsyncThunk("castles/fetchCastles", () => {
     .then((data) => data)
 })
 
-//Reducer
+export
+
 const castlesSlice = createSlice({
     name: "castles",
     initialState: {

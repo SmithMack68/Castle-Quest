@@ -1,5 +1,5 @@
 import React from 'react'
-import { Link } from 'react-router-dom'
+// import { Link } from 'react-router-dom'
 // import { useNavigate } from 'react-router-dom'
 import { makeStyles } from '@material-ui/core/styles';
 import AppBar from '@material-ui/core/AppBar';
@@ -11,9 +11,6 @@ const useStyles = makeStyles((theme) => ({
   root: {
     flexGrow: 1,
   },
-  menuButton: {
-    marginRight: theme.spacing(2),
-  },
   title: {
     flexGrow: 1,
   },
@@ -24,12 +21,12 @@ export default function Navbar() {
 
   return (
     <div className={classes.root}>
-      <AppBar position="static">
+      <AppBar style={{backgroundColor: '#74a1', color:'black'}} position="static">
         <Toolbar>
-          <Typography style={{ fontFamily: 'cursive'}}  variant="h3" className={classes.title}>
+          <Typography style={{ fontFamily: 'cursive', fontSize: 40}}   className={classes.title}>
             Castle Quest
           </Typography>
-          <Button style={{fontFamily: ""}} color="inherit">Castles</Button>
+          <Button color="inherit">Castles</Button>
           <Button color="inherit">Trips</Button>
           <Button color="inherit">Logout</Button>
         </Toolbar>

@@ -6,7 +6,8 @@ import Castles from './Castles'
 const CastleList = () => {
     const castles = useSelector((state) => state.castles.entities)
   return (
-    <div>CastleList
+    <div>
+        <h1>CastleList</h1>
        
       </div>
   )

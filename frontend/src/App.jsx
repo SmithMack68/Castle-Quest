@@ -8,7 +8,8 @@ import Login from './components/Authentication/Login';
 import CastleList from './features/castles/CastleList';
 import Castle from './features/castles/Castles';
 import AddCastleForm from './features/castles/AddCastleForm';
-// import EditCastle
+import EditCastle from './features/castles/EditCastle';
+import AddReviewForm from './features/reviews/AddReviewForm';
 // import './App.css';
 
 
@@ -32,7 +33,11 @@ function App() {
         <Route path="/castles" element={<CastleList />} />
         <Route path="/castles/new" element={<AddCastleForm />} />
         <Route path="/castles/:id" element={<Castle />} /> 
-        {/* {/* <Route path="/castles/:id/edit" element={<EditCastle />} /> */}
+        <Route path="/castles/:id/edit" element={<EditCastle />} />
+        <Route path="/castles/reviews/:castle_id" element={ <AddReviewForm />} />
+        {/* <Route path="/reviews/:id/edit" element={ <EditReview />} />
+        <Route path="/reviews" element={ <ReviewList />} />
+        <Route path="/reviews/:id" element={ <ReviewDetail />} /> */}
       </Routes>
     </Router>
   );

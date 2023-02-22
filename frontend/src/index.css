@@ -16,3 +16,22 @@ code {
   color: black;
   opacity: 1;
 }
+
+body {
+  background: url('https://res.cloudinary.com/dcpwwcueu/image/upload/v1676864598/Spells/Castles/Eilean_Donan_Castle__Scotland_-_Jan_2011_bgbjwn.jpg');
+  background-color: black;
+  height: 750px;
+  background-repeat: no-repeat; 
+  background-size: cover; 
+  background-position: center;
+
+}
+
+/* const myStyle= {
+  backgroundImage:'url(https://res.cloudinary.com/dcpwwcueu/image/upload/v1676851554/Spells/Castles/CastleStalker_ynbu3z.jpg)',
+  height:'100%',
+  width: '100%',
+  position: 'fixed',
+  marginTop: '-10px',
+  backgroundSize: 'cover'
+} */
